@@ -45,7 +45,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Student"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:onClick="student"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
