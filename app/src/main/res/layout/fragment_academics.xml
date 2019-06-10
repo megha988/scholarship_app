@@ -144,12 +144,20 @@
                     android:layout_weight="1"
                     android:text="1"/>
 
-                <TextView
+                <EditText
+                    android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:text="M1 "/>
+                    android:id="@+id/M1"
+                    />
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="M1 "/>-->
 
             </TableRow>
 
@@ -288,6 +296,13 @@
             </TableRow>
 
         </TableLayout>
+
+        <Button
+            android:id="@+id/updatebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Update"/>
 
     </LinearLayout>
 
