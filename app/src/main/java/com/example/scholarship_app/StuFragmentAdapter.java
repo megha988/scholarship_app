@@ -36,11 +36,11 @@ public class StuFragmentAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return "Academics";
+            return "Profile";
         } else if (position == 1) {
-            return "Online";
+            return "Programs";
         } else {
-            return "In Person";
+            return "Academics";
         }
     }
 

@@ -2,6 +2,9 @@ package com.example.scholarship_app;
 
 public class Program {
 
+    public Program()
+    {}
+
     private String mCourseName;
     private String mTime;
     private String mVenue;

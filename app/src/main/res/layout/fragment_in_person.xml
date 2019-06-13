@@ -7,9 +7,212 @@
     tools:context=".InPersonFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_margin="40dp"
+        android:padding="10dp"
+        android:background="#f1f1f1">
+
+        <TableRow
+            android:gravity="center_horizontal"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:background="#000000"
+                android:text="Semester"
+                android:layout_marginRight="3dp"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:background="#000000"
+                android:text="Marks"
+                android:layout_marginLeft="3dp"
+                android:textColor="#FFFFFF"/>
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="1"/>
+
+            <EditText
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:id="@+id/M1"
+                />
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:layout_weight="1"-->
+            <!--android:text="M1 "/>-->
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="M2 "/>
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="M3 "/>
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="M4"/>
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="M5"/>
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="6"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="M6"/>
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="7"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="M7"/>
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="8"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="M8"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/updatebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="in person" />
+        android:layout_gravity="center_horizontal"
+        android:text="Update"/>
 
 </LinearLayout>
