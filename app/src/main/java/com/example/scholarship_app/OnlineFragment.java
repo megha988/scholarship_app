@@ -40,7 +40,6 @@ public class OnlineFragment extends Fragment {
     private String t;
     private String v;
     private Program program;
-//    private Program mProgram;
     private ArrayList<Program> plist = new ArrayList<>();
 
 
