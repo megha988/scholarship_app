@@ -9,23 +9,33 @@ public class Program {
     private String mTime;
     private String mVenue;
 
-    public Program(String courseName, String time, String venue) {
-        mCourseName = courseName;
-        mTime = time;
-        mVenue = venue;
+    public Program(String mCourseName, String mTime, String mVenue) {
+        this.mCourseName = mCourseName;
+        this.mTime = mTime;
+        this.mVenue = mVenue;
     }
 
-    public String getCourseName() {
+    public String getmCourseName() {
         return mCourseName;
     }
 
-    public String getTime() {
+    public String getmTime() {
         return mTime;
     }
 
-    public String getVenue() {
+    public String getmVenue() {
         return mVenue;
     }
 
+    public void setmCourseName(String mCourseName) {
+        this.mCourseName = mCourseName;
+    }
 
+    public void setmTime(String mTime) {
+        this.mTime = mTime;
+    }
+
+    public void setmVenue(String mVenue) {
+        this.mVenue = mVenue;
+    }
 }

@@ -32,18 +32,18 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.cName);
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
-        nameTextView.setText(currentProgram.getCourseName());
+        nameTextView.setText(currentProgram.getmCourseName());
 
         // Find the TextView in the list_item.xml layout with the ID version_number
         TextView timeTextView = (TextView) listItemView.findViewById(R.id.time);
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
-        timeTextView.setText("Time: "+currentProgram.getTime());
+        timeTextView.setText("Time: "+currentProgram.getmTime());
 
         TextView venueTextView = (TextView) listItemView.findViewById(R.id.venue);
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
-        venueTextView.setText("Venue: "+currentProgram.getVenue());
+        venueTextView.setText("Venue: "+currentProgram.getmVenue());
 
 
 

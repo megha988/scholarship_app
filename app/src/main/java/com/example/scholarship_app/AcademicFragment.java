@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -16,10 +17,11 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InPersonFragment extends Fragment {
+public class AcademicFragment extends Fragment {
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mMarksDatabaseReference;
+    private ChildEventListener mChildEventListener;
     private Button mUpdateButton;
     private EditText mUpdateMarks;
 
@@ -28,7 +30,7 @@ public class InPersonFragment extends Fragment {
     private Marks marks;
 
 
-    public InPersonFragment() {
+    public AcademicFragment() {
         // Required empty public constructor
     }
 
@@ -37,7 +39,7 @@ public class InPersonFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_in_person, container, false);
+        final View view = inflater.inflate(R.layout.fragment_academic, container, false);
 
         mUsername = "ANONYMOUS";
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -52,6 +54,7 @@ public class InPersonFragment extends Fragment {
                 m = mUpdateMarks.getText().toString();
                 marks = new Marks(m, mUsername);
                 mMarksDatabaseReference.push().setValue(marks);
+                mUpdateMarks.clearFocus();
 
             }
         });

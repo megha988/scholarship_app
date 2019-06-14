@@ -12,16 +12,14 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class academicsFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
 
-    public academicsFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -39,7 +37,7 @@ public class academicsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View v = inflater.inflate(R.layout.fragment_academics, container, false);
+        final View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
         return v;
     }

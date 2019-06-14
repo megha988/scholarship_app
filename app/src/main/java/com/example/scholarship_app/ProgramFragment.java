@@ -18,13 +18,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class OnlineFragment extends Fragment {
+public class ProgramFragment extends Fragment {
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mProgramDatabaseReference;
@@ -43,7 +42,7 @@ public class OnlineFragment extends Fragment {
     private ArrayList<Program> plist = new ArrayList<>();
 
 
-    public OnlineFragment() {
+    public ProgramFragment() {
         // Required empty public constructor
     }
 
@@ -52,7 +51,7 @@ public class OnlineFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_online, container, false);
+        View view = inflater.inflate(R.layout.fragment_program, container, false);
 
         mUsername = "ANONYMOUS";
         mFirebaseDatabase = FirebaseDatabase.getInstance();

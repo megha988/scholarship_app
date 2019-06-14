@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "391615489267",
+    "firebase_url": "https://schapp-1cf16.firebaseio.com",
+    "project_id": "schapp-1cf16",
+    "storage_bucket": "schapp-1cf16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391615489267:android:f9c10afa65d97fb0",
+        "android_client_info": {
+          "package_name": "com.example.scholarship_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391615489267-bkhcfjm65bqqtvu0an2011jd89fi6pac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM7A3XVSY2MNprUEM_Nk9KWJTokxQPTaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391615489267-bkhcfjm65bqqtvu0an2011jd89fi6pac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,16 +1,15 @@
 package com.example.scholarship_app;
 
-import android.support.annotation.Nullable;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-public class StuFragmentAdapter extends FragmentPagerAdapter {
+public class StudentFragmentAdapter extends FragmentPagerAdapter {
 
     private Context mContext;
 
-    public StuFragmentAdapter(Context context, FragmentManager fm) {
+    public StudentFragmentAdapter(Context context, FragmentManager fm) {
 
         super(fm);
         mContext = context;
@@ -19,11 +18,11 @@ public class StuFragmentAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
-            return new academicsFragment();
+            return new ProfileFragment();
         } else if (position == 1) {
-            return new OnlineFragment();
+            return new ProgramFragment();
         } else  {
-            return new InPersonFragment();
+            return new AcademicFragment();
         }
     }
 
