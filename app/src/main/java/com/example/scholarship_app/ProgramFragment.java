@@ -55,7 +55,7 @@ public class ProgramFragment extends Fragment {
 
         mUsername = "ANONYMOUS";
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mProgramDatabaseReference = mFirebaseDatabase.getReference().child("programs");
+        mProgramDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("programs");
         mUpdateButton = view.findViewById(R.id.updatebutton);
         mProgramName = view.findViewById(R.id.upname);
         mTime = view.findViewById(R.id.utime);
@@ -78,6 +78,9 @@ public class ProgramFragment extends Fragment {
                 t = mTime.getText().toString();
                 v = mVenue.getText().toString();
                 program = new Program(n, t, v);
+//                User user = new User("David Jones","12/08/1999","RA171132",
+//                        "9876543210","dj123@gmail.com","AC Patil University",
+//                        "B. Tech", "CSE","5","2");
                 mProgramDatabaseReference.push().setValue(program);
                 mProgramName.setText("");
                 mVenue.setText("");
@@ -92,17 +95,9 @@ public class ProgramFragment extends Fragment {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String s) {
 
-//                List<String> keys = new ArrayList<>();
-//                for(DataSnapshot keyNode: dataSnapshot.getChildren()) {
-//                    keys.add(keyNode.getKey());
-//                    Program mprogram = keyNode.getValue(Program.class);
-//                    ProgramAdapter.add(mprogram);
-//                }
-
                 Program mProgram = dataSnapshot.getValue(Program.class);
-//                mProgramName.setText(mProgram.getCourseName());
                 mProgramAdapter.add(mProgram);
-//                mProgramAdapter.add(new Program("Data Science","9.30","OKLP"));
+
             }
 
             @Override

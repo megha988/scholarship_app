@@ -6,13 +6,14 @@
     android:orientation="vertical"
     tools:context=".AcademicFragment">
 
+
     <!-- TODO: Update blank fragment layout -->
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_margin="40dp"
-        android:padding="10dp"
+        android:padding="20dp"
         android:background="#f1f1f1">
 
         <TableRow
@@ -62,17 +63,10 @@
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:gravity="center_horizontal"
-                android:background="@android:color/transparent"
-                android:id="@+id/M1"
-                />
+                android:id="@+id/M1"/>
 
-            <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:gravity="center_horizontal"-->
-            <!--android:layout_weight="1"-->
-            <!--android:text="M1 "/>-->
 
         </TableRow>
 
@@ -86,12 +80,13 @@
                 android:layout_weight="1"
                 android:text="2"/>
 
-            <TextView
+            <EditText
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:text="M2 "/>
+                android:id="@+id/M2"/>
 
         </TableRow>
 
@@ -105,12 +100,13 @@
                 android:layout_weight="1"
                 android:text="3"/>
 
-            <TextView
+            <EditText
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:text="M3 "/>
+                android:id="@+id/M3"/>
 
         </TableRow>
 
@@ -124,12 +120,13 @@
                 android:layout_weight="1"
                 android:text="4"/>
 
-            <TextView
+            <EditText
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:text="M4"/>
+                android:id="@+id/M4"/>
 
         </TableRow>
 
@@ -143,12 +140,13 @@
                 android:layout_weight="1"
                 android:text="5"/>
 
-            <TextView
+            <EditText
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:text="M5"/>
+                android:id="@+id/M5"/>
 
         </TableRow>
 
@@ -162,12 +160,13 @@
                 android:layout_weight="1"
                 android:text="6"/>
 
-            <TextView
+            <EditText
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:text="M6"/>
+                android:id="@+id/M6"/>
 
         </TableRow>
 
@@ -181,12 +180,13 @@
                 android:layout_weight="1"
                 android:text="7"/>
 
-            <TextView
+            <EditText
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:text="M7"/>
+                android:id="@+id/M7"/>
 
         </TableRow>
 
@@ -201,12 +201,13 @@
                 android:layout_weight="1"
                 android:text="8"/>
 
-            <TextView
+            <EditText
+                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:gravity="center_horizontal"
-                android:layout_weight="1"
-                android:text="M8"/>
+                android:id="@+id/M8"/>
 
         </TableRow>
 
