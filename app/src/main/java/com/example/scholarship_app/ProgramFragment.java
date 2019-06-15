@@ -32,6 +32,7 @@ public class ProgramFragment extends Fragment {
     private ProgramAdapter mProgramAdapter;
 
     private String mUsername;
+    StudentActivity studentActivity = new StudentActivity();
     private ArrayList<Program> plist = new ArrayList<>();
 
 
@@ -46,11 +47,10 @@ public class ProgramFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_program, container, false);
 
-        mUsername = "ANONYMOUS";
+        mUsername = studentActivity.getmUsername();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mProgramDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("programs");
         mAddButton = view.findViewById(R.id.addbutton);
-
         mProgramAdapter = new ProgramAdapter(getActivity(), plist);
 
         ListView listView = view.findViewById(R.id.list);
@@ -72,24 +72,16 @@ public class ProgramFragment extends Fragment {
             }
 
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) { }
 
             @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
+            public void onChildRemoved(DataSnapshot dataSnapshot) { }
 
             @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) { }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
+            public void onCancelled(DatabaseError databaseError) { }
         };
 
         mAddButton.setOnClickListener(new View.OnClickListener() {

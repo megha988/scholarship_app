@@ -31,6 +31,7 @@ public class AcademicFragment extends Fragment {
     private ChildEventListener mChildEventListener;
     private Button mUpdateButton;
     private EditText M1,M2,M3,M4,M5,M6,M7,M8;
+    StudentActivity studentActivity = new StudentActivity();
 //    private int flag = 0;
 
     private String mUsername;
@@ -83,7 +84,7 @@ public class AcademicFragment extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_academic, container, false);
 
-        mUsername = "ANONYMOUS";
+        mUsername = studentActivity.getmUsername();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMarksDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("marks");
         mUpdateButton = view.findViewById(R.id.updatebutton);

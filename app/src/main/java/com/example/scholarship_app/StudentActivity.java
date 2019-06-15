@@ -7,6 +7,12 @@ import android.support.design.widget.TabLayout;
 
 public class StudentActivity extends AppCompatActivity {
 
+     private String mUsername = "ABCDE";
+
+    public String getmUsername() {
+        return mUsername;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

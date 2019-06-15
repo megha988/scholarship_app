@@ -32,6 +32,7 @@ public class ProfileFragment extends Fragment {
     private String mUsername;
     private TextView mName,mDOB, mRegNo,mContact, mEmail, mCollege, mProgram, mDept, mSemester,
             mBatch;
+    StudentActivity studentActivity = new StudentActivity();
 
 
 
@@ -41,7 +42,7 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        mUsername = "ANONYMOUS";
+        mUsername = studentActivity.getmUsername();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMarksDatabaseReference = mFirebaseDatabase.getReference()
                                     .child(mUsername)
