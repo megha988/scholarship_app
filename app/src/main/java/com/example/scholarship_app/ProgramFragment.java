@@ -1,14 +1,14 @@
 package com.example.scholarship_app;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -28,17 +28,10 @@ public class ProgramFragment extends Fragment {
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mProgramDatabaseReference;
     private ChildEventListener mChildEventListener;
-    private Button mUpdateButton;
-    private EditText mProgramName;
-    private EditText mTime;
-    private EditText mVenue;
+    private FloatingActionButton mAddButton;
     private ProgramAdapter mProgramAdapter;
 
     private String mUsername;
-    private String n;
-    private String t;
-    private String v;
-    private Program program;
     private ArrayList<Program> plist = new ArrayList<>();
 
 
@@ -56,11 +49,7 @@ public class ProgramFragment extends Fragment {
         mUsername = "ANONYMOUS";
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mProgramDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("programs");
-        mUpdateButton = view.findViewById(R.id.updatebutton);
-        mProgramName = view.findViewById(R.id.upname);
-        mTime = view.findViewById(R.id.utime);
-
-        mVenue = view.findViewById(R.id.uvenue);
+        mAddButton = view.findViewById(R.id.addbutton);
 
         mProgramAdapter = new ProgramAdapter(getActivity(), plist);
 
@@ -70,24 +59,6 @@ public class ProgramFragment extends Fragment {
 
 
 
-        mUpdateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                n = mProgramName.getText().toString();
-                t = mTime.getText().toString();
-                v = mVenue.getText().toString();
-                program = new Program(n, t, v);
-//                User user = new User("David Jones","12/08/1999","RA171132",
-//                        "9876543210","dj123@gmail.com","AC Patil University",
-//                        "B. Tech", "CSE","5","2");
-                mProgramDatabaseReference.push().setValue(program);
-                mProgramName.setText("");
-                mVenue.setText("");
-                mTime.setText("");
-
-            }
-        });
 
 
 
@@ -120,6 +91,16 @@ public class ProgramFragment extends Fragment {
 
             }
         };
+
+        mAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(),AddProgramActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         mProgramDatabaseReference.addChildEventListener(mChildEventListener);
 
