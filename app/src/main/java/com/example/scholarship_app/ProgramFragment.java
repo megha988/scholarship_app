@@ -3,7 +3,6 @@ package com.example.scholarship_app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -64,7 +63,7 @@ public class ProgramFragment extends Fragment {
 
         mChildEventListener = new ChildEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String s) {
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 Program mProgram = dataSnapshot.getValue(Program.class);
                 mProgramAdapter.add(mProgram);
