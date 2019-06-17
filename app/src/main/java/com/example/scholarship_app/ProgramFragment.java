@@ -31,7 +31,7 @@ public class ProgramFragment extends Fragment {
     private ProgramAdapter mProgramAdapter;
 
     private String mUsername;
-    StudentActivity studentActivity = new StudentActivity();
+    StudentLogin studentLogin = new StudentLogin();
     private ArrayList<Program> plist = new ArrayList<>();
 
 
@@ -46,7 +46,7 @@ public class ProgramFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_program, container, false);
 
-        mUsername = studentActivity.getmUsername();
+        mUsername = studentLogin.getmUsername();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mProgramDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("programs");
         mAddButton = view.findViewById(R.id.addbutton);

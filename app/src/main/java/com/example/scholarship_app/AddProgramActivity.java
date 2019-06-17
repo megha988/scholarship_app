@@ -33,11 +33,11 @@ public class AddProgramActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_program);
 
-        StudentActivity studentActivity = new StudentActivity();
-        mUsername = studentActivity.getmUsername();
+        StudentLogin studentLogin = new StudentLogin();
+        mUsername = studentLogin.getmUsername();
         mUpdateButton = findViewById(R.id.updatebutton);
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mProgramDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("profile");
+        mProgramDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("programs");
         mUpdateButton = findViewById(R.id.updatebutton);
         mProgramName = findViewById(R.id.upname);
         mTime = findViewById(R.id.utime);
@@ -47,18 +47,14 @@ public class AddProgramActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-//                n = mProgramName.getText().toString();
-//                t = mTime.getText().toString();
-//                v = mVenue.getText().toString();
-//                program = new Program(n, t, v);
-                User user = new User("ABCDE","12/08/1999","RA171132",
-                        "9876543210","dj123@gmail.com","AC Patil University",
-                        "B. Tech", "CSE","5","2");
-                mProgramDatabaseReference.push().setValue(user);
-//                mProgramName.setText("");
-//                mVenue.setText("");
-//                mTime.setText("");
-
+                n = mProgramName.getText().toString();
+                t = mTime.getText().toString();
+                v = mVenue.getText().toString();
+                program = new Program(n, t, v);
+                mProgramName.setText("");
+                mVenue.setText("");
+                mTime.setText("");
+                mProgramDatabaseReference.push().setValue(program);
                 finish();
 
             }

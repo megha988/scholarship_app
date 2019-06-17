@@ -3,6 +3,7 @@ package com.example.scholarship_app;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,12 +28,13 @@ public class ProfileFragment extends Fragment {
     }
 
     private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference mMarksDatabaseReference;
+    private DatabaseReference mProfileDatabaseReference;
     private ChildEventListener mChildEventListener;
     private String mUsername;
+    private FloatingActionButton mFloatingActionButton;
     private TextView mName,mDOB, mRegNo,mContact, mEmail, mCollege, mProgram, mDept, mSemester,
             mBatch;
-    StudentActivity studentActivity = new StudentActivity();
+    StudentLogin studentLogin = new StudentLogin();
 
 
 
@@ -42,9 +44,9 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        mUsername = studentActivity.getmUsername();
+        mUsername = studentLogin.getmUsername();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mMarksDatabaseReference = mFirebaseDatabase.getReference()
+        mProfileDatabaseReference = mFirebaseDatabase.getReference()
                                     .child(mUsername)
                                         .child("profile");
 
@@ -58,6 +60,7 @@ public class ProfileFragment extends Fragment {
         mDept = view.findViewById(R.id.dept_text_view);
         mSemester = view.findViewById(R.id.semester_text_view);
         mBatch = view.findViewById(R.id.batch_text_view);
+        mFloatingActionButton = view.findViewById(R.id.addprofile);
 
         mChildEventListener = new ChildEventListener() {
             @Override
@@ -109,7 +112,19 @@ public class ProfileFragment extends Fragment {
             }
         };
 
-        mMarksDatabaseReference.addChildEventListener(mChildEventListener);
+        mProfileDatabaseReference.addChildEventListener(mChildEventListener);
+
+        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                User user = new User("ABCDE","12/08/1999","RA171132",
+                        "9876543210","dj123@gmail.com","AC Patil University",
+                        "B. Tech", "CSE","5","2");
+                mProfileDatabaseReference.push().setValue(user);
+            }
+        });
+
+
 
         return view;
     }
