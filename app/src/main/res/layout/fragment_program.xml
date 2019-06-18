@@ -25,9 +25,10 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_gravity="bottom|end"
+        android:background="@color/colorAccent"
         android:layout_margin="20dp"
         android:id="@+id/addbutton"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@drawable/round_add_white_24"
         android:layout_height="wrap_content" />
 
 </FrameLayout>

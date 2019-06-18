@@ -19,12 +19,14 @@ public class AddProgramActivity extends AppCompatActivity {
     private DatabaseReference mProgramDatabaseReference;
     private Button mUpdateButton;
     private EditText mProgramName;
-    private EditText mTime;
+    private EditText mTime1, mTime2, mTime3;
     private EditText mVenue;
 
     private String mUsername;
     private String n;
-    private String t;
+    private String t1;
+    private String t2;
+    private String t3;
     private String v;
     private Program program;
 
@@ -40,7 +42,9 @@ public class AddProgramActivity extends AppCompatActivity {
         mProgramDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("programs");
         mUpdateButton = findViewById(R.id.updatebutton);
         mProgramName = findViewById(R.id.upname);
-        mTime = findViewById(R.id.utime);
+        mTime1 = findViewById(R.id.utime1);
+        mTime2 = findViewById(R.id.utime2);
+        mTime3 = findViewById(R.id.utime3);
         mVenue = findViewById(R.id.uvenue);
 
         mUpdateButton.setOnClickListener(new View.OnClickListener() {
@@ -48,12 +52,16 @@ public class AddProgramActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 n = mProgramName.getText().toString();
-                t = mTime.getText().toString();
+                t1 = mTime1.getText().toString();
+                t2 = mTime2.getText().toString();
+                t3 = mTime3.getText().toString();
                 v = mVenue.getText().toString();
-                program = new Program(n, t, v);
+                program = new Program(n, t1, t2, t3, v);
                 mProgramName.setText("");
                 mVenue.setText("");
-                mTime.setText("");
+                mTime1.setText("");
+                mTime2.setText("");
+                mTime3.setText("");
                 mProgramDatabaseReference.push().setValue(program);
                 finish();
 

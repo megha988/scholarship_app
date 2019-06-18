@@ -62,7 +62,6 @@ public class StudentActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
     }
 
     @Override

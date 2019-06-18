@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -34,11 +36,35 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
         // set this text on the name TextView
         nameTextView.setText(currentProgram.getmCourseName());
 
+        RadioButton radbut;
+        radbut = listItemView.findViewById(R.id.radio01);
+        radbut.setText(currentProgram.getmTime1());
+        radbut = listItemView.findViewById(R.id.radio11);
+        radbut.setText(currentProgram.getmTime2());
+        radbut = listItemView.findViewById(R.id.radio21);
+        radbut.setText(currentProgram.getmTime3());
+
+        RadioGroup radioGroup = listItemView.findViewById(R.id.daily_weekly_button_view1);
+        RadioButton rb = listItemView.findViewById(radioGroup.getCheckedRadioButtonId());
+//        RadioButton radioButton = listItemView.findViewById(radioGroup.getCheckedRadioButtonId());
+
         // Find the TextView in the list_item.xml layout with the ID version_number
-        TextView timeTextView = (TextView) listItemView.findViewById(R.id.time);
-        // Get the version number from the current AndroidFlavor object and
-        // set this text on the number TextView
-        timeTextView.setText("Time: "+currentProgram.getmTime());
+        final TextView timeTextView = (TextView) listItemView.findViewById(R.id.time);
+
+        timeTextView.setText("Time: "+rb.getText());
+
+
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                        RadioButton radioButton = radioGroup.findViewById(i);
+
+                // Get the version number from the current AndroidFlavor object and
+                // set this text on the number TextView
+                timeTextView.setText("Time: "+radioButton.getText());
+            }
+        });
 
         TextView venueTextView = (TextView) listItemView.findViewById(R.id.venue);
         // Get the version name from the current AndroidFlavor object and
