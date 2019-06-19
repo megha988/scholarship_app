@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".ProgramFragment">
 
@@ -18,7 +20,8 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".StudentActivity"/>
+            tools:context=".StudentActivity"
+            android:paddingBottom="50dp"/>
 
     </LinearLayout>
 
@@ -30,5 +33,16 @@
         android:id="@+id/addbutton"
         android:src="@drawable/round_add_white_24"
         android:layout_height="wrap_content" />
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_gravity="top|end"-->
+        <!--android:background="@color/colorAccent"-->
+        <!--android:layout_margin="20dp"-->
+        <!--android:id="@+id/updatebutton2"-->
+        <!--android:src="@drawable/round_check_white_24"-->
+        <!--app:layout_anchor="@id/addbutton"-->
+        <!--app:layout_anchorGravity="top"-->
+        <!--android:layout_height="wrap_content" />-->
 
 </FrameLayout>
