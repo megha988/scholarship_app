@@ -32,11 +32,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LOGIN AS"/>
+                android:textSize="40sp"
+                android:textColor="@color/colorPrimary"
+                android:text="Welcome!"/>
 
         </LinearLayout>
 
         <LinearLayout
+            android:paddingTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -44,15 +47,12 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Student"
+                android:text="CONTINUE"
+                android:background="@color/colorPrimary"
+                android:textColor="@android:color/white"
                 android:layout_weight="1"
                 android:onClick="student"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Administrator"
-                android:layout_weight="1"
-                android:onClick="admin"/>
+
 
         </LinearLayout>
 

@@ -1,6 +1,7 @@
 package com.example.scholarship_app;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,11 +61,15 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
 
                         RadioButton radioButton = radioGroup.findViewById(i);
 
+
+
                 // Get the version number from the current AndroidFlavor object and
                 // set this text on the number TextView
                 timeTextView.setText("Time: "+radioButton.getText());
             }
         });
+
+
 
         TextView venueTextView = (TextView) listItemView.findViewById(R.id.venue);
         // Get the version name from the current AndroidFlavor object and
