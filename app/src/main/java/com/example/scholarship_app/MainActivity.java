@@ -19,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(stu);
     }
 
+    public void admin(View view) {
+        Intent stu = new Intent(this, AdminLogin.class);
+        startActivity(stu);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -27,6 +32,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
     }
 }

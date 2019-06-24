@@ -37,14 +37,14 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
         nameTextView.setText(currentProgram.getmCourseName());
 
         RadioButton radbut;
-        radbut = listItemView.findViewById(R.id.radio01);
+        radbut = listItemView.findViewById(R.id.radio1);
         radbut.setText(currentProgram.getmTime1());
-        radbut = listItemView.findViewById(R.id.radio11);
+        radbut = listItemView.findViewById(R.id.radio2);
         radbut.setText(currentProgram.getmTime2());
-        radbut = listItemView.findViewById(R.id.radio21);
+        radbut = listItemView.findViewById(R.id.radio3);
         radbut.setText(currentProgram.getmTime3());
 
-        RadioGroup radioGroup = listItemView.findViewById(R.id.daily_weekly_button_view1);
+        RadioGroup radioGroup = listItemView.findViewById(R.id.slot_selection);
         RadioButton rb = listItemView.findViewById(radioGroup.getCheckedRadioButtonId());
 //        RadioButton radioButton = listItemView.findViewById(radioGroup.getCheckedRadioButtonId());
 

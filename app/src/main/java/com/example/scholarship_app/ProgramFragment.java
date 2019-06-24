@@ -28,7 +28,7 @@ public class ProgramFragment extends Fragment {
     private DatabaseReference mProgramDatabaseReference;
     private ChildEventListener mChildEventListener;
     private FloatingActionButton mAddButton;
-    private ProgramAdapter mProgramAdapter;
+    public ProgramAdapter mProgramAdapter;
 
     private String mUsername;
     StudentLogin studentLogin = new StudentLogin();

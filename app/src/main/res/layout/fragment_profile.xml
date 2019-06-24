@@ -3,254 +3,310 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E0E0E0"
     android:orientation="vertical"
-    android:background="#FFFFFF"
     tools:context=".ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <LinearLayout
+    <ScrollView
+        android:background="#E0E0E0"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_marginTop="30dp"
+        <LinearLayout
+            android:background="#E0E0E0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="ACADEMICS"
-            android:textStyle="bold"
-            android:padding="20dp"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp">
-
-
-
-            <TableRow
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:elevation="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="30dp">
 
                 <TextView
+                    android:id="@+id/name_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:text="Name:  "/>
-
-                <TextView
-                    android:id="@+id/username_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:layout_weight="1"
-                    tools:text="Ousnik Polley"/>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:text="DOB:  "/>
-
-                <TextView
-                    android:id="@+id/dob_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    tools:text="12/04/2000" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:text="Reg. No.:  "/>
+                    android:padding="10dp"
+                    android:textAllCaps="true"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    tools:text="Ousnik Polley" />
 
                 <TextView
                     android:id="@+id/regno_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    tools:text="RA1711003011018" />
+                    android:padding="10dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"
+                    tools:text="Reg. No.: RA1711003011018" />
 
-            </TableRow>
+            </LinearLayout>
 
-            <TableRow
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/rounded_corner"
+                android:elevation="10dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:text="Contact:  "/>
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="PERSONAL DETAILS"
+                    android:textColor="#757575"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/contact_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    tools:text="7506003598" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:text="Email:  "/>
-
-                <TextView
-                    android:id="@+id/email_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    tools:text="ousnikpolley@gmail.com" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:text="College:  "/>
-
-                <TextView
-                    android:id="@+id/college_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    tools:text="SRM Institute of Science and Technology" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:text="Program:  "/>
-
-                <TextView
-                    android:id="@+id/program_text_view"
-                    android:layout_width="wrap_content"
+                <TableLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    tools:text="B. Tech" />
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-            </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
 
-            <TableRow
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Name" />
+
+                        <TextView
+                            android:id="@+id/username_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            tools:text="Ousnik Polley" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Date of Birth" />
+
+                        <TextView
+                            android:id="@+id/dob_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            tools:text="12/04/2000" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="E-Mail ID" />
+
+                        <TextView
+                            android:id="@+id/email_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            tools:text="ousnikpolley@gmail.com" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Contact No." />
+
+                        <TextView
+                            android:id="@+id/contact_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            tools:text="7506003598" />
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/rounded_corner"
+                android:elevation="10dp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:text="Dept:  "/>
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="EDUCATIONAL DETAILS"
+                    android:textColor="#757575"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/dept_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    tools:text="Computer Science Engineering" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-            </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="College" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:text="Semester:  "/>
+                        <TextView
+                            android:id="@+id/college_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            tools:text="SRM University" />
 
-                <TextView
-                    android:id="@+id/semester_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    tools:text="5" />
+                    </TableRow>
 
-            </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Program" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="end"
-                    android:layout_weight="1"
-                    android:text="Batch:  "/>
+                        <TextView
+                            android:id="@+id/program_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            tools:text="B. Tech" />
 
-                <TextView
-                    android:id="@+id/batch_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start"
-                    tools:text="2" />
+                    </TableRow>
 
-            </TableRow>
-            
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
 
-        </TableLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Department" />
 
-    </LinearLayout>
+                        <TextView
+                            android:id="@+id/dept_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            tools:text="Computer Science Engineering" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="20dp"
-        android:id="@+id/addprofile"
-        android:src="@drawable/round_add_white_24"
-        android:layout_height="wrap_content" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Semester" />
+
+                        <TextView
+                            android:id="@+id/semester_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            tools:text="5" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Batch" />
+
+                        <TextView
+                            android:id="@+id/batch_text_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            tools:text="2" />
+
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_margin="20dp"-->
+    <!--android:id="@+id/addprofile"-->
+    <!--android:src="@drawable/round_add_white_24"-->
+    <!--android:layout_height="wrap_content" />-->
 
 </FrameLayout>

@@ -32,7 +32,7 @@ public class ProfileFragment extends Fragment {
     private ChildEventListener mChildEventListener;
     private String mUsername;
     private FloatingActionButton mFloatingActionButton;
-    private TextView mName,mDOB, mRegNo,mContact, mEmail, mCollege, mProgram, mDept, mSemester,
+    private TextView mHeadingName,mName,mDOB, mRegNo,mContact, mEmail, mCollege, mProgram, mDept, mSemester,
             mBatch;
     StudentLogin studentLogin = new StudentLogin();
 
@@ -51,6 +51,7 @@ public class ProfileFragment extends Fragment {
                                         .child("profile");
 
         mName = view.findViewById(R.id.username_text_view);
+        mHeadingName = view.findViewById(R.id.name_text_view);
         mDOB = view.findViewById(R.id.dob_text_view);
         mRegNo = view.findViewById(R.id.regno_text_view);
         mContact = view.findViewById(R.id.contact_text_view);
@@ -60,16 +61,17 @@ public class ProfileFragment extends Fragment {
         mDept = view.findViewById(R.id.dept_text_view);
         mSemester = view.findViewById(R.id.semester_text_view);
         mBatch = view.findViewById(R.id.batch_text_view);
-        mFloatingActionButton = view.findViewById(R.id.addprofile);
+//        mFloatingActionButton = view.findViewById(R.id.addprofile);
 
         mChildEventListener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String s) {
 
                 User user = dataSnapshot.getValue(User.class);
+                mHeadingName.setText(user.getName());
                 mName.setText(user.getName());
                 mDOB.setText(user.getDob());
-                mRegNo.setText(user.getRegno());
+                mRegNo.setText("Reg. No.: "+user.getRegno());
                 mContact.setText(user.getContact());
                 mEmail.setText(user.getEmail());
                 mCollege.setText(user.getCollege());
@@ -114,15 +116,15 @@ public class ProfileFragment extends Fragment {
 
         mProfileDatabaseReference.addChildEventListener(mChildEventListener);
 
-        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                User user = new User("ABCDE","12/08/1999","RA171132",
-                        "9876543210","dj123@gmail.com","AC Patil University",
-                        "B. Tech", "CSE","5","2");
-                mProfileDatabaseReference.push().setValue(user);
-            }
-        });
+//        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                User user = new User("ABCDE","12/08/1999","RA171132",
+//                        "9876543210","dj123@gmail.com","AC Patil University",
+//                        "B. Tech", "CSE","5","2");
+//                mProfileDatabaseReference.push().setValue(user);
+//            }
+//        });
 
 
 

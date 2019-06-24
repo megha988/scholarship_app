@@ -32,6 +32,10 @@ public class StudentLogin extends AppCompatActivity {
         return mUsername;
     }
 
+    public static void setmUsername(String mUsername) {
+        StudentLogin.mUsername = mUsername;
+    }
+
     public void student(View view) {
         Intent stu = new Intent(this, StudentLogin.class);
         startActivity(stu);
@@ -55,6 +59,7 @@ public class StudentLogin extends AppCompatActivity {
             public void onClick(View view) {
                 AuthUI.getInstance().signOut(StudentLogin.this);
                 flag=0;
+                mUsername = " ";
                 Intent stu = new Intent(StudentLogin.this, MainActivity.class);
                 startActivity(stu);
 
@@ -129,6 +134,7 @@ public class StudentLogin extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.sign_out_menu:
                 AuthUI.getInstance().signOut(this);
+                mUsername = " ";
                 flag=0;
                 return true;
             default:

@@ -1,6 +1,7 @@
 package com.example.scholarship_app;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,14 +12,35 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Arrays;
 
 public class StudentActivity extends AppCompatActivity {
+
+    StudentLogin studentLogin = new StudentLogin();
+
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
+
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            FirebaseUser currentuser = FirebaseAuth.getInstance().getCurrentUser();
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (currentuser != null) {
+                    onSignedInInitialize();
+                } else {
+                    onSignedOutCleanup();
+                    finish();
+                }
+            }
+        };
 
         // Find the view pager that will allow the user to swipe between fragments
         ViewPager viewPager =  findViewById(R.id.viewpager);
@@ -42,6 +64,8 @@ public class StudentActivity extends AppCompatActivity {
 
 
 
+
+
     }
 
     @Override
@@ -51,6 +75,13 @@ public class StudentActivity extends AppCompatActivity {
             if(resultCode == RESULT_CANCELED)
                 finish();
         }
+    }
+
+    private void onSignedInInitialize () {    }
+
+    private void onSignedOutCleanup () {
+        ProgramFragment programFragment = new ProgramFragment();
+        programFragment.mProgramAdapter.clear();
     }
 
     public void log(View view) {
@@ -82,6 +113,7 @@ public class StudentActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.sign_out_menu:
                 FirebaseAuth.getInstance().signOut();
+                studentLogin.setmUsername(" ");
                 new StudentLogin().
                 finish();
                 startActivity(new Intent(this,StudentLogin.class));
