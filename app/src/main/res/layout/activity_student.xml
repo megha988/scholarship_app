@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".StudentActivity">
+    tools:context=".StudentActivity"
+    android:id="@+id/stuact">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"

@@ -11,20 +11,20 @@ public class User {
     private String contact;
     private String email;
     private String college;
-    private String program;
+    private String course;
     private String department;
     private String semester;
     private String batch;
 
     public User (String name, String dob, String regno, String contact, String email,
-                 String college, String program, String department, String semester, String batch) {
+                 String college, String course, String department, String semester, String batch) {
         this.name = name;
         this.dob = dob;
         this.regno = regno;
         this.contact = contact;
         this.email = email;
         this.college = college;
-        this.program = program;
+        this.course = course;
         this.department = department;
         this.semester = semester;
         this.batch = batch;
@@ -78,12 +78,12 @@ public class User {
         this.college = college;
     }
 
-    public String getProgram() {
-        return program;
+    public String getCourse() {
+        return course;
     }
 
-    public void setProgram(String program) {
-        this.program = program;
+    public void setCourse(String course) {
+        this.course = course;
     }
 
     public String getDepartment() {

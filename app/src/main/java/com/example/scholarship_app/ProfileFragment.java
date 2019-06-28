@@ -1,6 +1,7 @@
 package com.example.scholarship_app;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -32,9 +33,9 @@ public class ProfileFragment extends Fragment {
     private ChildEventListener mChildEventListener;
     private String mUsername;
     private FloatingActionButton mFloatingActionButton;
-    private TextView mHeadingName,mName,mDOB, mRegNo,mContact, mEmail, mCollege, mProgram, mDept, mSemester,
+    private TextView mHeadingName,mName,mDOB, mRegNo,mContact, mEmail, mCollege, mCourse, mDept, mSemester,
             mBatch;
-    StudentLogin studentLogin = new StudentLogin();
+    StudentCheck studentCheck = new StudentCheck();
 
 
 
@@ -44,7 +45,7 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        mUsername = studentLogin.getmUsername();
+        mUsername = studentCheck.getmUsername();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mProfileDatabaseReference = mFirebaseDatabase.getReference()
                                     .child(mUsername)
@@ -57,11 +58,11 @@ public class ProfileFragment extends Fragment {
         mContact = view.findViewById(R.id.contact_text_view);
         mEmail = view.findViewById(R.id.email_text_view);
         mCollege = view.findViewById(R.id.college_text_view);
-        mProgram = view.findViewById(R.id.program_text_view);
+        mCourse = view.findViewById(R.id.program_text_view);
         mDept = view.findViewById(R.id.dept_text_view);
         mSemester = view.findViewById(R.id.semester_text_view);
         mBatch = view.findViewById(R.id.batch_text_view);
-//        mFloatingActionButton = view.findViewById(R.id.addprofile);
+        mFloatingActionButton = view.findViewById(R.id.addprofile);
 
         mChildEventListener = new ChildEventListener() {
             @Override
@@ -75,7 +76,7 @@ public class ProfileFragment extends Fragment {
                 mContact.setText(user.getContact());
                 mEmail.setText(user.getEmail());
                 mCollege.setText(user.getCollege());
-                mProgram.setText(user.getProgram());
+                mCourse.setText(user.getCourse());
                 mDept.setText(user.getDepartment());
                 mSemester.setText(user.getSemester());
                 mBatch.setText(user.getBatch());
@@ -91,7 +92,7 @@ public class ProfileFragment extends Fragment {
                 mContact.setText(user.getContact());
                 mEmail.setText(user.getEmail());
                 mCollege.setText(user.getCollege());
-                mProgram.setText(user.getProgram());
+                mCourse.setText(user.getCourse());
                 mDept.setText(user.getDepartment());
                 mSemester.setText(user.getSemester());
                 mBatch.setText(user.getBatch());
@@ -116,15 +117,12 @@ public class ProfileFragment extends Fragment {
 
         mProfileDatabaseReference.addChildEventListener(mChildEventListener);
 
-//        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                User user = new User("ABCDE","12/08/1999","RA171132",
-//                        "9876543210","dj123@gmail.com","AC Patil University",
-//                        "B. Tech", "CSE","5","2");
-//                mProfileDatabaseReference.push().setValue(user);
-//            }
-//        });
+        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),AddProfileActivity.class));
+            }
+        });
 
 
 

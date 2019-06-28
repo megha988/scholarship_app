@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
 
-public class StudentLogin extends AppCompatActivity {
+public class StudentCheck extends AppCompatActivity {
 
     private Button logoutButton;
     private Button loginButton;
@@ -33,11 +33,11 @@ public class StudentLogin extends AppCompatActivity {
     }
 
     public static void setmUsername(String mUsername) {
-        StudentLogin.mUsername = mUsername;
+        StudentCheck.mUsername = mUsername;
     }
 
     public void student(View view) {
-        Intent stu = new Intent(this, StudentLogin.class);
+        Intent stu = new Intent(this, StudentCheck.class);
         startActivity(stu);
     }
 
@@ -45,7 +45,7 @@ public class StudentLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_login);
+        setContentView(R.layout.activity_student_check);
 
 
 
@@ -57,10 +57,10 @@ public class StudentLogin extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AuthUI.getInstance().signOut(StudentLogin.this);
+                AuthUI.getInstance().signOut(StudentCheck.this);
                 flag=0;
                 mUsername = " ";
-                Intent stu = new Intent(StudentLogin.this, MainActivity.class);
+                Intent stu = new Intent(StudentCheck.this, MainActivity.class);
                 startActivity(stu);
 
             }
@@ -69,7 +69,7 @@ public class StudentLogin extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent stu = new Intent(StudentLogin.this, StudentActivity.class);
+                Intent stu = new Intent(StudentCheck.this, StudentActivity.class);
                 startActivity(stu);
 
             }
@@ -145,7 +145,7 @@ public class StudentLogin extends AppCompatActivity {
     private void onSignedInInitialize(String username) {
         mUsername = username;
         if (flag !=1) {
-            startActivity(new Intent(StudentLogin.this, StudentActivity.class));
+            startActivity(new Intent(StudentCheck.this, StudentActivity.class));
             flag=1;
         }
 

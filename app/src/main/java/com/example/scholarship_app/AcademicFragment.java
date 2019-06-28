@@ -1,25 +1,22 @@
 package com.example.scholarship_app;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.text.Editable;
-import android.text.InputFilter;
-import android.text.TextWatcher;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 /**
@@ -31,13 +28,18 @@ public class AcademicFragment extends Fragment {
     private DatabaseReference mMarksDatabaseReference;
     private ChildEventListener mChildEventListener;
     private Button mUpdateButton;
-    private EditText M1,M2,M3,M4,M5,M6,M7,M8,SGPA1,SGPA2,SGPA3,SGPA4,SGPA5,SGPA6,SGPA7,SGPA8;
-    StudentLogin studentLogin = new StudentLogin();
+    private EditText M1,M2,M3,M4,M5,M6,M7,M8,SGPA1,SGPA2,SGPA3,SGPA4,SGPA5,SGPA6,SGPA7,SGPA8,CGPA;
+
+    StudentCheck studentCheck = new StudentCheck();
+
 //    private int flag = 0;
 
     private String mUsername;
     private String m1,m2,m3,m4,m5,m6,m7,m8,sgpa1,sgpa2,sgpa3,sgpa4,sgpa5,sgpa6,sgpa7,sgpa8;
+    private float z1,z2,z3,z4,z5,z6,z7,z8;
     private Marks marks;
+
+    private float mCumulativeGPA;
 
 
     public AcademicFragment() {
@@ -52,47 +54,13 @@ public class AcademicFragment extends Fragment {
         editText.setEnabled(false);
     }
 
-    private void TCL(final TextView textView) {
-
-        textView.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (charSequence.toString().trim().length() > 0) {
-                        mUpdateButton.setEnabled(true);
-                }
-                else {
-                    mUpdateButton.setEnabled(false);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-                if(textView.getText().toString().trim().length() > 0) {
-                    mUpdateButton.setEnabled(true);
-                }
-                else {
-                    mUpdateButton.setEnabled(false);
-                }
-
-            }
-        });
-
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_academic, container, false);
 
-        mUsername = studentLogin.getmUsername();
+        mUsername = studentCheck.getmUsername();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMarksDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("marks");
         mUpdateButton = view.findViewById(R.id.updatebutton);
@@ -112,15 +80,9 @@ public class AcademicFragment extends Fragment {
         SGPA6 = view.findViewById(R.id.SGPA6);
         SGPA7 = view.findViewById(R.id.SGPA7);
         SGPA8 = view.findViewById(R.id.SGPA8);
+        CGPA = view.findViewById(R.id.CGPA);
 
-//        TCL(M1);
-//        TCL(M2);
-//        TCL(M3);
-//        TCL(M4);
-//        TCL(M5);
-//        TCL(M6);
-//        TCL(M7);
-//        TCL(M8);
+        CGPA.setEnabled(false);
 
         mChildEventListener = new ChildEventListener() {
             @Override
@@ -160,28 +122,70 @@ public class AcademicFragment extends Fragment {
                 SGPA8.setText(marks.getSGPA8());
                 echeck(SGPA8);
 
+                try {
+                    z1=Float.parseFloat(marks.getSGPA1());
+                } catch (NumberFormatException e) { }
+
+                try {
+                z2=Float.parseFloat(marks.getSGPA2());
+                } catch (NumberFormatException e) { }
+
+                try {
+                z3=Float.parseFloat(marks.getSGPA3());
+                } catch (NumberFormatException e) { }
+
+                try {
+                z4=Float.parseFloat(marks.getSGPA4());
+                } catch (NumberFormatException e) { }
+
+                try {
+                z5=Float.parseFloat(marks.getSGPA5());
+                } catch (NumberFormatException e) { }
+
+                try {
+                z6=Float.parseFloat(marks.getSGPA6());
+                } catch (NumberFormatException e) { }
+
+                try {
+                z7=Float.parseFloat(marks.getSGPA7());
+                } catch (NumberFormatException e) { }
+
+                try {
+                z8=Float.parseFloat(marks.getSGPA8());
+                } catch (NumberFormatException e) { }
+
+
+                Float [] z = new Float[]{z1,z2,z3,z4,z5,z6,z7,z8};
+                float count =0;
+
+                for(int i=0;i<8;++i) {
+                    if(z[i]!=null&&z[i]!=0) {
+                        mCumulativeGPA += z[i];
+                        ++count;
+                    }
+
+                }
+
+                if(count==0)
+                    count=1;
+
+                mCumulativeGPA /=count;
+
+                CGPA.setText("CGPA: "+String.format("%.2f",mCumulativeGPA));
 
             }
 
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) { }
 
             @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
+            public void onChildRemoved(DataSnapshot dataSnapshot) { }
 
             @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) { }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
+            public void onCancelled(DatabaseError databaseError) { }
         };
 
         mMarksDatabaseReference.addChildEventListener(mChildEventListener);
@@ -211,11 +215,14 @@ public class AcademicFragment extends Fragment {
 
                 marks = new Marks(m1,m2,m3,m4,m5,m6,m7,m8,sgpa1,sgpa2,sgpa3,sgpa4,sgpa5,sgpa6,sgpa7,sgpa8);
                 mMarksDatabaseReference.push().setValue(marks);
-//                M8.clearFocus();
+                getActivity().finish();
+                startActivity(new Intent(getActivity(),StudentActivity.class));
+
+//                FragmentTransaction ft = getFragmentManager().beginTransaction();
+//                ft.detach(AcademicFragment.this).attach(AcademicFragment.this).commit();
 
             }
         });
-
 
 
 

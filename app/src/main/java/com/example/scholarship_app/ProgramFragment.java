@@ -31,7 +31,7 @@ public class ProgramFragment extends Fragment {
     public ProgramAdapter mProgramAdapter;
 
     private String mUsername;
-    StudentLogin studentLogin = new StudentLogin();
+    StudentCheck studentCheck = new StudentCheck();
     private ArrayList<Program> plist = new ArrayList<>();
 
 
@@ -46,13 +46,13 @@ public class ProgramFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_program, container, false);
 
-        mUsername = studentLogin.getmUsername();
+        mUsername = studentCheck.getmUsername();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mProgramDatabaseReference = mFirebaseDatabase.getReference().child(mUsername).child("programs");
         mAddButton = view.findViewById(R.id.addbutton);
         mProgramAdapter = new ProgramAdapter(getActivity(), plist);
 
-        ListView listView = view.findViewById(R.id.list);
+        final ListView listView = view.findViewById(R.id.list);
 
         listView.setAdapter(mProgramAdapter);
 
@@ -66,6 +66,7 @@ public class ProgramFragment extends Fragment {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 Program mProgram = dataSnapshot.getValue(Program.class);
+                mProgram.setKey(dataSnapshot.getKey());
                 mProgramAdapter.add(mProgram);
 
             }
@@ -89,7 +90,6 @@ public class ProgramFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(),AddProgramActivity.class);
                 startActivity(intent);
-
             }
         });
 

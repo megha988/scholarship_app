@@ -8,10 +8,40 @@
     tools:context=".AddProgramActivity"
     android:padding="30dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Program Type: "
+        android:padding="5dp"/>
+
+    <RadioGroup
+        android:id="@+id/utype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="5dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/online"
+            android:checked="true"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Online"/>
+
+        <RadioButton
+            android:id="@+id/offline"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Offline"/>
+
+    </RadioGroup>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:paddingHorizontal="5dp"
         android:orientation="horizontal">
 
         <TextView
@@ -29,7 +59,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:paddingHorizontal="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date: "/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:id="@+id/udate"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="5dp"
         android:orientation="vertical">
 
         <TextView
@@ -41,18 +91,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Slot 1"
+            android:inputType="time"
             android:id="@+id/utime1"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Slot 2"
+            android:inputType="time"
             android:id="@+id/utime2"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Slot 3"
+            android:inputType="time"
             android:id="@+id/utime3"/>
 
     </LinearLayout>
@@ -60,7 +113,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:paddingHorizontal="5dp"
         android:orientation="horizontal">
 
         <TextView
@@ -79,6 +132,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
         android:text="Update"
         android:id="@+id/updatebutton"/>
 

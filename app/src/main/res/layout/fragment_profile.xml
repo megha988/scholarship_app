@@ -11,6 +11,8 @@
 
     <ScrollView
         android:background="#E0E0E0"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -220,7 +222,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Program" />
+                            android:text="Course" />
 
                         <TextView
                             android:id="@+id/program_text_view"
@@ -301,12 +303,12 @@
 
     </ScrollView>
 
-    <!--<android.support.design.widget.FloatingActionButton-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_gravity="bottom|end"-->
-    <!--android:layout_margin="20dp"-->
-    <!--android:id="@+id/addprofile"-->
-    <!--android:src="@drawable/round_add_white_24"-->
-    <!--android:layout_height="wrap_content" />-->
+    <android.support.design.widget.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_gravity="bottom|end"
+    android:layout_margin="20dp"
+    android:id="@+id/addprofile"
+    android:src="@drawable/round_add_white_24"
+    android:layout_height="wrap_content" />
 
 </FrameLayout>

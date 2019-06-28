@@ -10,17 +10,13 @@ import android.support.design.widget.TabLayout;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Arrays;
-
 public class StudentActivity extends AppCompatActivity {
 
-    StudentLogin studentLogin = new StudentLogin();
+    StudentCheck studentCheck = new StudentCheck();
 
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
@@ -84,21 +80,19 @@ public class StudentActivity extends AppCompatActivity {
         programFragment.mProgramAdapter.clear();
     }
 
-    public void log(View view) {
-        Intent stu = new Intent(this, StudentActivity.class);
-        startActivity(stu);
-    }
-
 
     @Override
     protected void onPause() {
         super.onPause();
+        FirebaseAuth.getInstance().removeAuthStateListener(mAuthStateListener);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        //mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+        FirebaseAuth.getInstance().addAuthStateListener(mAuthStateListener);
+        if(FirebaseAuth.getInstance().getCurrentUser()==null)
+            finish();
     }
 
     @Override
@@ -113,10 +107,10 @@ public class StudentActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.sign_out_menu:
                 FirebaseAuth.getInstance().signOut();
-                studentLogin.setmUsername(" ");
-                new StudentLogin().
+                studentCheck.setmUsername(" ");
+                new StudentCheck().
                 finish();
-                startActivity(new Intent(this,StudentLogin.class));
+                startActivity(new Intent(this, StudentCheck.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

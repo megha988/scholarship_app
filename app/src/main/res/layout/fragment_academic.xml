@@ -8,209 +8,6 @@
     tools:context=".AcademicFragment">
 
 
-    <!-- TODO: Update blank fragment layout -->
-    <!--<TableLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="50dp"-->
-        <!--android:layout_margin="40dp"-->
-        <!--android:padding="20dp">-->
-        <!--&lt;!&ndash;android:background="#f1f1f1">&ndash;&gt;-->
-
-        <!--<TableRow-->
-            <!--android:gravity="center_horizontal">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:padding="20dp"-->
-                <!--android:background="@color/colorAccent"-->
-                <!--android:text="Semester"-->
-                <!--android:layout_marginRight="3dp"-->
-                <!--android:textColor="#FFFFFF"/>-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:padding="20dp"-->
-                <!--android:background="@color/colorAccent"-->
-                <!--android:text="Marks"-->
-                <!--android:layout_marginLeft="3dp"-->
-                <!--android:textColor="#FFFFFF"/>-->
-
-        <!--</TableRow>-->
-
-        <!--<TableRow-->
-            <!--android:gravity="center_horizontal"-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--android:focusable="true"-->
-            <!--android:focusableInTouchMode="true"-->
-            <!--android:clickable="true">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="1"/>-->
-
-            <!--<EditText-->
-                <!--android:layout_weight="1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:inputType="numberDecimal"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:id="@+id/M1"/>-->
-
-
-        <!--</TableRow>-->
-
-        <!--<TableRow-->
-            <!--android:gravity="center_horizontal">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="2"/>-->
-
-            <!--<EditText-->
-                <!--android:layout_weight="1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:inputType="numberDecimal"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:id="@+id/M2"/>-->
-
-        <!--</TableRow>-->
-
-        <!--<TableRow-->
-            <!--android:gravity="center_horizontal">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="3"/>-->
-
-            <!--<EditText-->
-                <!--android:layout_weight="1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:inputType="numberDecimal"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:id="@+id/M3"/>-->
-
-        <!--</TableRow>-->
-
-        <!--<TableRow-->
-            <!--android:gravity="center_horizontal">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="4"/>-->
-
-            <!--<EditText-->
-                <!--android:layout_weight="1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:inputType="numberDecimal"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:id="@+id/M4"/>-->
-
-        <!--</TableRow>-->
-
-        <!--<TableRow-->
-            <!--android:gravity="center_horizontal">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="5"/>-->
-
-            <!--<EditText-->
-                <!--android:layout_weight="1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:inputType="numberDecimal"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:id="@+id/M5"/>-->
-
-        <!--</TableRow>-->
-
-        <!--<TableRow-->
-            <!--android:gravity="center_horizontal">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="6"/>-->
-
-            <!--<EditText-->
-                <!--android:layout_weight="1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:inputType="numberDecimal"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:id="@+id/M6"/>-->
-
-        <!--</TableRow>-->
-
-        <!--<TableRow-->
-            <!--android:gravity="center_horizontal">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="7"/>-->
-
-            <!--<EditText-->
-                <!--android:layout_weight="1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:inputType="numberDecimal"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:id="@+id/M7"/>-->
-
-        <!--</TableRow>-->
-
-        <!--<TableRow-->
-            <!--android:gravity="center_horizontal"-->
-            <!--android:layout_marginBottom="20dp">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="8"/>-->
-
-            <!--<EditText-->
-                <!--android:layout_weight="1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:inputType="numberDecimal"-->
-                <!--android:gravity="center_horizontal"-->
-                <!--android:id="@+id/M8"/>-->
-
-        <!--</TableRow>-->
-
-    <!--</TableLayout>-->
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -288,7 +85,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="25dp"
+            android:clipToPadding="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -349,6 +148,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="number"
                                 android:background="@color/colorPrimary"
                                 android:textColor="@android:color/white"
                                 tools:text="83"/>
@@ -359,6 +159,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="numberDecimal"
                                 android:background="@color/colorPrimaryDark"
                                 android:textColor="@android:color/white"
                                 tools:text="8.3"/>
@@ -423,6 +224,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="number"
                                 android:background="@color/colorPrimary"
                                 android:textColor="@android:color/white"
                                 tools:text="83"/>
@@ -433,6 +235,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="numberDecimal"
                                 android:background="@color/colorPrimaryDark"
                                 android:textColor="@android:color/white"
                                 tools:text="8.3"/>
@@ -497,6 +300,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="number"
                                 android:background="@color/colorPrimary"
                                 android:textColor="@android:color/white"
                                 tools:text="83"/>
@@ -507,6 +311,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="numberDecimal"
                                 android:background="@color/colorPrimaryDark"
                                 android:textColor="@android:color/white"
                                 tools:text="8.3"/>
@@ -571,6 +376,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="number"
                                 android:background="@color/colorPrimary"
                                 android:textColor="@android:color/white"
                                 tools:text="83"/>
@@ -581,6 +387,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="numberDecimal"
                                 android:background="@color/colorPrimaryDark"
                                 android:textColor="@android:color/white"
                                 tools:text="8.3"/>
@@ -645,6 +452,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="number"
                                 android:background="@color/colorPrimary"
                                 android:textColor="@android:color/white"
                                 tools:text="83"/>
@@ -655,6 +463,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="numberDecimal"
                                 android:background="@color/colorPrimaryDark"
                                 android:textColor="@android:color/white"
                                 tools:text="8.3"/>
@@ -719,6 +528,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="number"
                                 android:background="@color/colorPrimary"
                                 android:textColor="@android:color/white"
                                 tools:text="83"/>
@@ -729,6 +539,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="numberDecimal"
                                 android:background="@color/colorPrimaryDark"
                                 android:textColor="@android:color/white"
                                 tools:text="8.3"/>
@@ -793,6 +604,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="number"
                                 android:background="@color/colorPrimary"
                                 android:textColor="@android:color/white"
                                 tools:text="83"/>
@@ -803,6 +615,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="numberDecimal"
                                 android:background="@color/colorPrimaryDark"
                                 android:textColor="@android:color/white"
                                 tools:text="8.3"/>
@@ -867,6 +680,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="number"
                                 android:background="@color/colorPrimary"
                                 android:textColor="@android:color/white"
                                 tools:text="83"/>
@@ -877,6 +691,7 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:layout_gravity="right"
+                                android:inputType="numberDecimal"
                                 android:background="@color/colorPrimaryDark"
                                 android:textColor="@android:color/white"
                                 tools:text="8.3"/>
@@ -901,7 +716,7 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <TextView
+                        <EditText
                             android:id="@+id/CGPA"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
