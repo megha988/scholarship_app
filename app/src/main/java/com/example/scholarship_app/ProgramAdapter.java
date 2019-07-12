@@ -31,6 +31,9 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
     private View listItemView;
     private StudentCheck studentCheck = new StudentCheck();
 
+
+
+
     public ProgramAdapter(Activity context, ArrayList<Program> program) {
         super(context, 0, program);
     }
@@ -92,10 +95,15 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
 
             nameTextView.setText(currentProgram.getmCourseName());
 
+            radioGroup.setTag(position);
+
 
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(final RadioGroup radioGroup, int i) {
+
+                    int position = (Integer) radioGroup.getTag();
+                    currentProgram = getItem(position);
 
                     RadioButton radioButton = radioGroup.findViewById(i);
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(listItemView.getContext());
@@ -108,9 +116,10 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
                                 public void onClick(DialogInterface arg0, int arg1) {
 
                                 radioGroup.setVisibility(View.GONE);
-//                                mProgramDatabaseReference.child(currentProgram.getKey()).child("flag").setValue(true);
-//                                mProgramDatabaseReference.child(currentProgram.getKey()).child("mTime")
-//                                        .setValue(currentProgram.getmTime());
+//                                nameTextView.setText(currentProgram.getmTime());
+                                mProgramDatabaseReference.child(currentProgram.getKey()).child("flag").setValue(true);
+                                mProgramDatabaseReference.child(currentProgram.getKey()).child("mTime")
+                                        .setValue(currentProgram.getmTime());
                                 }
                             });
                     alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -131,7 +140,7 @@ public class ProgramAdapter extends ArrayAdapter<Program> {
 
 
         } else {
-
+            nameTextView.setText(currentProgram.getmCourseName());
             timeTextView.setText("Time: " + currentProgram.getmTime());
             radioGroup.setVisibility(View.GONE);
         }
